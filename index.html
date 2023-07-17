@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>Cinema Noir</title>
+   
+  </head>
+  <body>
+    <div class="container">
+      <h1>Cinema Noir</h1>
+      <h2>It's movie night!</h2>
+      <img
+        class="movie"
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/064/609/original/ginger-couple-posing-with-popcorn-glasses.jpg?1674783587"
+        alt="movie night"
+      />
+      <p>
+        Have you ever watched a movie and wondered what if you could watch it on
+        a big screen with your friends?<br />
+        <em>Cinema Noir</em> is your right place!
+      </p>
+      <hr />
+      <br />
+
+      <div class="p1">
+        <span class="cinema-noir"><strong>Cinema Noir</strong> </span> is a
+        private movie theater where you can host a movie night and watch any
+        movie with anyone you like.
+      </div>
+
+      <div class="p2">
+        We offer you cosy seats, visual and acoustic comfort and various choices
+        of movies from any era. <br />
+        There's nothing quite like watching a movie on a huge screen in a cosy
+        place with a group of friends or family. <br />
+        Enjoy your own movie night &#127916
+      </div>
+
+      <div class="list">
+        Cinema Noir schedule:
+        <ul>
+          <li class="weekend">Saturday-Sunday</li>
+          <li class="Tuesday">Tuesday</li>
+          <li class="friday">Thursday-Friday</li>
+        </ul>
+      </div>
+      <div class="info">
+        To choose a movie visit this website &#128071
+        <a href="https://letterboxd.com/" target="_blank"
+          ><img
+            class="letterboxd"
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/064/487/original/unnamed.png?1674687810"
+            alt="letterboxd"
+        /></a>
+      </div>
+      <button>click & reserve</button>
+      <div class="coder">This page is coded by Hedieh kh.Alizadeh</div>
+    </div>
+    <script>
+      function reservation() {
+        let name = prompt("What is your name?");
+        let email = prompt("What is your email address?");
+        let movie = prompt("What movie do you want to watch?");
+        let day = prompt("Which day do you want to watch it?")
+        day = day.toLowerCase();
+        let heading = document.querySelector("h2");
+        if(day === "monday" || day === "wednesday"){
+        heading.innerHTML = "Sorry, we're closed on"+" "+day+"&#9785";
+        } else{ 
+        heading.innerHTML =
+          day +
+          " " +
+          "is reserved for you"+
+          " "+
+          name + 
+          " " +
+          ",enjoy watching" +
+          " " +
+          movie +
+          "&#9786;" ;
+      }
+    }
+      let button = document.querySelector("button");
+      button.addEventListener("click", reservation);
+    </script>
+  </body>
+</html>
